@@ -1,0 +1,15 @@
+.custom-flatpickr:hover { border: 2px solid #248eff !important; } .custom-flatpickr:focus {outline: none;  border: 2px solid #248eff !important; }
+
+
+.custom-flatpickr {
+width: 90%; 
+height:37px; 
+border-radius:5px; 
+border:1px solid #d2d2e4 ; 
+padding-left: 15px; 
+font-size:15px  ;
+color: #a0a0a0 ;
+margin-top: 10px ;
+
+}
+

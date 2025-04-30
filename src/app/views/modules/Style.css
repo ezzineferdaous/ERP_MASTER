@@ -1,0 +1,81 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.custom-flatpickr:hover {
+  /* border: 2px solid #248eff !important; */
+  border-color: #000000;
+}
+
+.custom-flatpickr:focus {outline: none;  border: 2px solid #0168d6 !important; }
+
+
+.custom-flatpickr {
+width: 100%;
+height:40px;
+border-radius:5px;
+border:1px solid #a7a7a7 ;
+padding-left: 15px;
+font-size:15px  ;
+color: #000000 ;
+
+}
+
+
+
+.label-flatpickr {
+ position: absolute;
+ left: 12px;
+ font-size: 11px;
+ color: #a7a7a7;
+ transition: 0.2s;
+ background-color: #fff;
+ padding: 0 4px;
+ z-index: 1;
+}
+
+.Flatpickr-flatpickr:focus + .label-flatpickr {
+ color: #0168d6;
+}
+.Flatpickr-flatpickr {
+
+ width: 100%;
+ border: 1px solid #a7a7a7;
+ border-radius: 4px;
+ padding: 10px 12px;
+ font-size: 14px;
+ outline: none;
+}
+
+.Flatpickr-flatpickr:hover{
+ border: 1px solid #000000;
+}
+
+.Flatpickr-flatpickr:focus  {
+ border: 2px solid #0168d6;
+}
+#fb{
+  width: 300%;
+  border: 1px solid #a7a7a7;
+  border-radius: 4px;
+  padding: 10px 12px;
+  font-size: 14px;
+  outline: none;
+ }
+
+ .Grid{
+ width: 100%;
+ border: 1px solid #a7a7a7;
+ border-radius: 4px;
+ padding: 10px 12px;
+ font-size: 14px;
+ outline: none;
+ }
+
