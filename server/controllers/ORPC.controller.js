@@ -1,8 +1,10 @@
 const db = require("../models");
 const ORPC = db.ORPC;
 const Op = db.Sequelize.Op;
+// controller (Node.js / Express)
+const jwt = require('jsonwebtoken');
+const Salaries = db.Salaries;
 const Sequelize = require('sequelize')
-
 //Create and Save a new ORPC
 exports.create = (req, res)  => {
    
@@ -171,4 +173,34 @@ exports.delete = (req, res)  => {
 exports.deleteAll = (req, res)  => {
 
 };
+////////////////////////////////////////////////////////////
+
+exports.createWithToken = async (req, res) => {
+  try {
+    // 1) خلق أو جلب Salary
+    const salary = await Salaries.create(req.body.salaireData);
+
+    // 2) صايب payload
+    const payload = {
+      salaryId: salary.id,
+      // تقدر تزيد amount، grade، ... لكن راني كنصح فقط بالـ id
+    };
+
+    // 3) جنّر التوكن (مدة الصلاحية ساعة مثلاً)
+    const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' });
+
+    // 4) خلق ORPC مع UserSign من salary.id
+    const oRPC = {
+      /* باقي الحقول */ 
+      UserSign: salary.id,
+    };
+    const data = await ORPC.create(oRPC);
+
+    // 5) رجّع للمستعمل التوكن والداتا
+    res.send({ data, token });
+  } catch (err) {
+    res.status(500).send({ message: err.message });
+  }
+};
+
  

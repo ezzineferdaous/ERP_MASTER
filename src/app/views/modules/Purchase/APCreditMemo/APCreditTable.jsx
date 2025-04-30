@@ -434,23 +434,23 @@ const handleEdit = (index, fieldName) => {
                   </StyledTableCell>
                   
                   <StyledTableCell>
-  <TextField
-    fullWidth
-    style={{ width: "100%", height: "53px" }}
-    type="number"
-    name="PrixHT"
-     // edet this [
-      data-index={index}
-      inputRef={(el) => (inputRefs.current[`PrixHT-${index}`] = el)}
-      defaultValue={pdn.PrixHT}
-      onFocus={(e) => handleFocus(e.target.value)}
-      onBlur={(e) => handleBlur(pdn.LineNum, e)}
-      //]   
-     disabled={!pdn.ItemCode}
-    inputProps={{
-      style: { borderRadius: "0px", appearance: "textfield" },
-    }}
-  />
+                      <TextField
+                        fullWidth
+                        style={{ width: "100%", height: "53px" }}
+                        type="number"
+                        name="PrixHT"
+                        // edet this [
+                          data-index={index}
+                          inputRef={(el) => (inputRefs.current[`PrixHT-${index}`] = el)}
+                          defaultValue={pdn.PrixHT}
+                          onFocus={(e) => handleFocus(e.target.value)}
+                          onBlur={(e) => handleBlur(pdn.LineNum, e)}
+                          //]   
+                        disabled={!pdn.ItemCode}
+                        inputProps={{
+                          style: { borderRadius: "0px", appearance: "textfield" },
+                        }}
+                      />
                   </StyledTableCell>
 
                   <StyledTableCell>
@@ -473,6 +473,7 @@ const handleEdit = (index, fieldName) => {
                     />
                   </StyledTableCell>
 
+ 
                   <StyledTableCell>
                     <TextField
                       fullWidth
@@ -493,7 +494,7 @@ const handleEdit = (index, fieldName) => {
                     />
                   </StyledTableCell>
 
-                  {/* VAT Field */}
+                 {/* VAT Field */}
                   <StyledTableCell>
                     <FormControl fullWidth>
                       <Select
@@ -504,7 +505,7 @@ const handleEdit = (index, fieldName) => {
                       defaultValue={pdn.VAT || '0'}
                       onFocus={(e) => handleFocus(e.target.value)}
                       onBlur={(e) => handleBlur(pdn.LineNum, e)}
-                      //] 
+                      
                         disabled={!pdn.ItemCode}
                         style={{ width: "100%", height: "53px" }}
                         inputProps={{ style: { borderRadius: "0px", appearance: "textfield" } }}
@@ -561,7 +562,8 @@ const handleEdit = (index, fieldName) => {
                           },
                         }}
                       />
-                    </StyledTableCell>
+                  </StyledTableCell>
+
                   <StyledTableCell>
                     <div
                       style={{

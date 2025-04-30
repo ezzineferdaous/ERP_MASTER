@@ -37,7 +37,7 @@ const InventoryCountingList = (props) => {
   const [rowCount, setRowCount] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [isRefetching, setIsRefetching] = useState(false);
-  const exportColumns = [ "DocNum", "DocDate", "Hour","Comment", "UserSign",  "WhsCode", "PriceList"];
+  const exportColumns = [ "DocNum", "DocDate", "Hour","Comment",   "WhsCode"];
 
   const Back = async (e) => {
     e.preventDefault();
@@ -130,9 +130,7 @@ const InventoryCountingList = (props) => {
       },
       { accessorKey: 'Hour', header: 'Heure', size: 150 },
       { accessorKey: 'Comment', header: 'Remarque', size: 150 },
-      { accessorKey: 'UserSign', header: 'Utilisateur', size: 150 },
       { accessorKey: 'WhsCode', header: 'Magasin', size: 150 },
-      { accessorKey: 'PriceList', header: 'List Price', size: 150 },
       {
         accessorFn: (row) => `${row.DocEntry} ${row.DocNum}`, 
         id: 'Afficher', 
